@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: enrollment_api
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - .env
+
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      REDIS_HOST: enrollment_redis
+      REDIS_PORT: 6379
+
+    networks:
+      - enrollment_network
+
+    restart: unless-stopped
+
+networks:
+  enrollment_network:
+    external: true

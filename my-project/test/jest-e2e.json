@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": "..",
+  "testEnvironment": "node",
+  "testMatch": ["<rootDir>/test/**/*.e2e-spec.ts"],
+  "transform": {
+    "^.+\\.(t|j)s$": ["ts-jest", {
+      "tsconfig": "./tsconfig.json"
+    }]
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(@nestjs|passport|passport-jwt|passport-local|cache-manager|cache-manager-redis-yet)/)"
+  ],
+  "moduleNameMapper": {
+    "^src/(.*)$": "<rootDir>/src/$1"
+  }
+}
